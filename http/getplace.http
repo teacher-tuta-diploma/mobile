@@ -1,0 +1,6 @@
+# curl -L -X GET 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?locationbias=point%3A2000%4021.028388762715014%2C105.83415973931551&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key=AIzaSyCua32_ZoxT3D0Gb0Jn9bYk3XulBkxnagA'
+
+# curl -L -X GET 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=21.03167441417428%2C105.81319089978933&rankby=distance&key=AIzaSyCua32_ZoxT3D0Gb0Jn9bYk3XulBkxnagA'
+
+
+ curl -L -X GET 'https://maps.googleapis.com/maps/api/geocode/json?latlng=20.985934,105.812174&sensor=false&key=AIzaSyCua32_ZoxT3D0Gb0Jn9bYk3XulBkxnagA'

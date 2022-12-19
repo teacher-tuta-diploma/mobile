@@ -1,0 +1,285 @@
+{
+    "welcome": "Welcome to React Native BaseAppRN by TheCodingMachine",
+    "actions": {
+        "continue": "Continue"
+    },
+    "example": {
+        "helloUser": "I am a fake user, my name is {{name}}",
+        "labels": {
+        "userId": "Enter a user id"
+        }
+    },
+    "app": {
+        "title":"THÀNH HƯNG GROUP"
+    },
+    "start": {
+        "name": "THÀNH HƯNG GROUP",
+        "login": "Đăng nhập",
+        "register": "Đăng ký tài khoản"
+    },
+    "Login": {
+        "name": "Đăng nhập",
+        "title": "THÀNH HƯNG GROUP",
+        "intro": "Chào mừng quý khách trở lại",
+        "placeholder": {
+            "numberPhone": "Số điện thoại",
+            "password": "Mật khẩu"
+        },
+        "message": {
+            "numberPhoneRequire": "Vui lòng nhập số điện thoại",
+            "numberPhoneInvalid": "Số điện thoại không hợp lệ",
+            "passwordRequire": "Vui lòng nhập mật khẩu",
+            "lengthPassword": "Mật khẩu phải từ 6 - 20 ký tự"
+        },
+        "forgetPassword": "Quên mật khẩu?",
+        "other": "Hoặc đăng nhập bằng",
+        "create": "Bạn chưa có tài khoản?"
+    },
+    "Register": {
+        "name": "Đăng ký",
+        "title": "THÀNH HƯNG GROUP",
+        "intro": "Chào mừng quý khách",
+        "request": "Vui lòng cung cấp số điện thoại của bạn để sử dụng các dịch vụ của Thành Hưng.",
+        "placeholder": {
+            "numberPhone": "Nhập số điện thoại *",
+            "name": "Họ và tên *",
+            "password": "Mật khẩu *",
+            "email": "Email *",
+            "address": "Địa chỉ *"
+        },
+        "message": {
+            "numberPhoneRequire": "Vui lòng nhập số điện thoại",
+            "numberPhoneInvalid": "Số điện thoại không hợp lệ",
+            "nameRequire": "Vui lòng nhập họ và tên",
+            "passwordRequire": "Vui lòng nhập mật khẩu",
+            "emailRequire": "Vui lòng nhập email",
+            "emailInvalid": "Email không hợp lệ",
+            "addressRequire": "Vui lòng nhập địa chỉ"
+        },
+        "alert": {
+            "notify": "Thông báo",
+            "success": "Đăng ký thành công",
+            "terms": "Quý khách chưa đồng ý điều khoản điều kiện"
+        },
+        "termsAndService": {
+            "text1": "Tôi đồng ý với với ",
+            "text2": "Điều khoản ",
+            "text3": "và ",
+            "text4": "Chính sách ",
+            "text5": "bảo mật ",
+            "text6": "của Thành Hưng"
+        },
+        "SMSConfirm": "Hệ thống gửi SMS để xác nhận.",
+        "other": "Hoặc đăng nhập bằng",
+        "hadAccount": "Bạn đã có tài khoản?"
+    },
+    "registerSuccess": {
+        "title": "Chúc mừng quý khách đã đăng ký tài khoản thành công",
+        "request": "Vui lòng đăng nhập để sử dụng các dịch vụ của Thành Hưng"
+    },
+    "AdviseAndSurvey": {
+        "header": "Tư vấn và khảo sát",
+        "intro": "Bạn cần tư vấn và khảo sát trực tiếp địa điểm? Bạn chưa biết lựa chọn xe phù hợp? Hãy để chúng tôi tư vấn cho bạn nhanh chóng và chính xác nhất.",
+        "label": {
+            "address": "Điểm khảo sát",
+            "contactName": "Người liên hệ",
+            "numberPhone": "Số điện thoại liên hệ",
+            "date": "Thời gian hẹn khảo sát"
+        },
+        "message": {
+            "addressRequire": "Vui lòng nhập địa chỉ",
+            "contactNameRequire": "Vui lòng nhập tên liên hệ",
+            "numberPhoneRequire": "Vui lòng nhập số điện thoại",
+            "numberPhoneInvalid": "Số điện thoại không hợp lệ",
+            "dateRequire": "Vui lòng chọn thời gian"
+        },
+        "done": "Xong"
+    },
+    "OrderSuccess": {
+        "header": "Đặt dịch vụ thành công",
+        "title": "Đặt dịch vụ thành công",
+        "content": "It is a long established fact that a reader will be distracted by the readable content of a page",
+        "AdviseAndSurvey": {
+            "header": "Đặt giao hàng thành công",
+            "title": "Đơn hàng của bạn đang được xử lý"
+        }
+    },
+    "DetailQuotes": {
+        "header": "Báo giá chi tiết",
+        "header2": "Danh sách đồ đạc",
+        "title": "Danh sách đồ đạc cần vận chuyển",
+        "amount": "Số lượng",
+        "unitPrice": "Đơn giá",
+        "intoMoney": "Thành tiền",
+        "charges": "Cước phí",
+        "VAT": "VAT",
+        "total": "TỔNG",
+        "agree": "Đồng ý"
+    },
+    "Notification": {
+        "header": "Thông báo",
+        "noti": "Thông báo",
+        "messager": "Tin nhắn",
+        "shipment": "Chuyến hàng",
+        "noNoti": "Không có thông báo",
+        "noMessage": "Bạn không có tin nhắn"
+    },
+    "AdviseSelectCar": {
+        "header": "Tư vấn chọn xe",
+        "title": "Sử dụng dịch vụ tư vấn miễn phí của Thành Hưng",
+        "call": "Gọi điện",
+        "texting": "Nhắn tin"
+    },
+    "BookingCar": {
+        "header": "Tự chọn xe",
+        "title": "Danh sách xe do Thành Hưng cung cấp",
+        "chooseCar": "Chọn xe"
+    },
+    "DetailsOrderCompleted": {
+        "header": "Chi tiết chuyến hàng ",
+        "vehiclesAndServices": "Phương tiện và dịch vụ",
+        "deliveryCharges": "Phí giao hàng",
+        "transport": "Vận chuyển: ",
+        "billDriver": "Hóa đơn từ tài xế",
+        "realTotal": "Tổng thực thu",
+        "notPay": "Chưa thanh toán",
+        "feeContract": "Phí theo hợp đồng",
+        "freight": "Cước vận chuyển",
+        "additional": "Phụ trội",
+        "stevedore": "Bốc xếp",
+        "total": "Tổng",
+        "payment": "Hình thức thanh toán",
+        "directPayment": "Thanh toán trực tiếp khi giao hàng",
+        "appPayment": "Tính tiền theo app",
+        "orderCode": "Mã đơn hàng",
+        "timeBooking": "Thời gian đặt dịch vụ",
+        "timeReceive": "Tài xế đến điểm lấy hàng",
+        "timeStart": "Bắt đầu chuyến hàng",
+        "timeFinish": "Hoàn thành chuyến hàng",
+        "unknown": "Không xác định",
+        "payNow": "Thanh toán ngay",
+        "Unpaid": "Chưa thanh toán",
+        "message": {
+            "title": "Hoàn thành",
+            "intro": "Đánh giá dịch vụ của Thành Hưng để chúng tôi có thể phục vụ khách hàng một cách tốt nhất!",
+            "evaluation": "Đánh giá"
+        },
+        "feeFitment": "Chi phí đồ đạc vận chuyển",
+        "feePack" : "Chi phí vận chuyển đóng gói",
+        "totalFee" : "Chi phí chuyển trọn gói"
+    },
+    "Evaluation": {
+        "title": "Đánh giá dịch vụ Taxi tải Thành Hưng",
+        "applications": "Dịch vụ ứng dụng đặt chuyến",
+        "driver": "Tài xế và dịch vụ vận chuyển",
+        "finish": "Hoàn thành",
+        "customerFeedback": "Ý kiến của khách hàng",
+        "alert": "Vui lòng đánh giá cho dịch vụ của chúng tôi"
+    },
+    "ConfirmDelivery": {
+        "header": "Xác nhận thông tin",
+        "alert": "Bạn chưa chọn phương thức thanh toán!",
+        "promotion": "Khuyến mại",
+        "enterPromotion": "Nhập mã khuyến mại",
+        "apply": "Áp dụng",
+        "choose": "Chọn",
+        "VND": " VND",
+        "buttonComplete": "Đặt chuyến",
+        "total": "Tổng phí",
+        "cost": "Phí chuyến hàng",
+        "yourPromo": "Mã giảm giá của bạn",
+        "discount": "Giảm giá",
+        "maxDiscount": "Giảm tối đa",
+        "finish": "Hoàn thành"
+    },
+    "MapViewPicker": {
+        "update": "Cập nhật",
+        "location": "Địa điểm",
+        "locationName": "Tên địa điểm",
+        "contact": "Người liên hệ",
+        "phoneContact": "Số điện thoại liên hệ",
+        "note": "Ghi chú cho tài xế",
+        "alert": {
+            "title": "Cảnh báo ⚠️",
+            "content": "Bạn muốn xóa địa điểm này?"
+        },
+        "message": {
+            "contactRequire": "Vui lòng nhập tên liên hệ",
+            "phoneRequire": "Vui lòng nhập số điện thoại liên hệ",
+            "addressRequire": "Vui lòng chọn địa điểm"
+        },
+        "deleteLocation": "Xóa địa điểm"
+    },
+    "NewDeliveryOrder": {
+        "contactDriver": "Liên lạc với tài xế chuyến hàng",
+        "findDriver": "Tìm tài xế",
+        "cancelDelivery": "Hủy chuyến",
+        "newDelivery": "Chuyến hàng mới"
+    },
+    "WaitingDeliveryOrder": {
+        "status": "Đang giao hàng",
+        "viewPrice": "Xem báo giá",
+        "viewContract": "Xem hợp đồng"
+    },
+    "CancelDeliveryOrder": {
+        "status": "Hủy"
+    },
+    "FailDeliveryOrder": {
+        "status": "Thất bại"
+    },
+    "WaitingAdviseOrder": {
+        "status": "Chờ tư vấn",
+        "adviseInfo": "Thông tin hẹn tư vấn",
+        "surveyLocation": "Địa điểm khảo sát",
+        "contactHuman": "Người liên hệ",
+        "telephoneContact": "Số điện thoại liên hệ",
+        "surveyAppointmentTime": "Thời gian hẹn khảo sát"
+    },
+    "AdviseOrder": {
+        "status": "Đã tư vấn"
+    },
+    "CancelReason": {
+        "title": "Lý do hủy chuyến",
+        "alert": "Vui lòng chọn lý do hủy chuyến",
+        "submit": "Xác nhận"
+    },
+    "SendAndReceiveInfo": {
+        "name":"Thông tin gửi và nhận",
+        "sender": "Người gửi",
+        "receiver": "Người nhận"
+    },
+    "OTP": {
+        "alert": "Đã gửi lại otp. Vui lòng chờ trong giây lát!",
+        "checkSMS": "Vui lòng kiểm tra SMS để lấy thông tin mã OTP",
+        "codeExpired": "Mã đã hết hạn",
+        "reSend": "Gửi lại",
+        "phone": "Số điện thoại",
+        "login": "Đăng nhập",
+        "confirm": "Xác nhận",
+        "chagePhone": "Chỉnh sửa số điện thoại",
+        "reSendCode": "Gửi lại mã"
+    },
+    "Chat": {
+        "input": "Aa..."
+    },
+    "HelpCenter" : {
+        "header": "Thành Hưng trợ giúp",
+        "title1": "Hotline Hà Nội",
+        "title2": "Hotline TP. Hồ Chí Minh",
+        "title3": "Tổng đài tư vấn miễn phí Hà nội và Hồ Chí Minh",
+        "phone1": "024.38.733.733",
+        "phone2": "024.38.73.13.13",
+        "phone3": "028.54.360.360",
+        "phone4": "028.39.876.876",
+        "phone5": "1800.00.33"
+    },
+    "CallScreen": {
+        "header1": "Cuộc gọi đến",
+        "header2": "Cuộc gọi đi",
+        "status1": "Đang gọi bạn",
+        "status2": "Bạn đang gọi",
+        "accept": "Chấp nhận",
+        "refuse": "Từ chối",
+        "end": "Kết thúc"
+    }
+}

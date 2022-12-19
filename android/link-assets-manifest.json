@@ -1,0 +1,117 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-Black.ttf",
+      "sha1": "d7fccc741f2affcf54e7905c73e9f9fbffe0fdb5"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-BlackItalic.ttf",
+      "sha1": "fcaca12987f27f186808860fcb6b76a4e5028015"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-Bold.ttf",
+      "sha1": "306d0114dbbe9570797f6b4ebf85faf73d00eb4f"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-BoldItalic.ttf",
+      "sha1": "c3db08715bf99832e17d44e2a2d4dcc163a8356e"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-ExtraBold.ttf",
+      "sha1": "6d1b5ab8514bc6e9e1de184d609dce233dc48336"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-ExtraBoldItalic.ttf",
+      "sha1": "c3674025228d05fc40eac5487b4efaed3bc1851d"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-ExtraLight.ttf",
+      "sha1": "9330dc57d70a274ff4e0e3f3f1ef52c0cd271be4"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-ExtraLightItalic.ttf",
+      "sha1": "c6662d586dcc88e217deae0c6ba7645f4718b6fc"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-Italic.ttf",
+      "sha1": "230530f0dc0fa769ff62c2ec3f3f91bdc0d21583"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-Light.ttf",
+      "sha1": "2d8d692af00dbe94dada19c78ac72a3d77e015e1"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-LightItalic.ttf",
+      "sha1": "8feb2832c9ce3f7e6d3d3b88a3bbc4ddbdc2df24"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-Regular.ttf",
+      "sha1": "e3f28097d9e45b12116bf47e471aef9a95df68dd"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-SemiBold.ttf",
+      "sha1": "70534915a6f536ded6544e13471676acaba0cd10"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-SemiBoldItalic.ttf",
+      "sha1": "5024ed55b29da4ad5ff3b8cea589632fce140b1e"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-Black.ttf",
+      "sha1": "d7fccc741f2affcf54e7905c73e9f9fbffe0fdb5"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-BlackItalic.ttf",
+      "sha1": "fcaca12987f27f186808860fcb6b76a4e5028015"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-Bold.ttf",
+      "sha1": "306d0114dbbe9570797f6b4ebf85faf73d00eb4f"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-BoldItalic.ttf",
+      "sha1": "c3db08715bf99832e17d44e2a2d4dcc163a8356e"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-ExtraBold.ttf",
+      "sha1": "6d1b5ab8514bc6e9e1de184d609dce233dc48336"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-ExtraBoldItalic.ttf",
+      "sha1": "c3674025228d05fc40eac5487b4efaed3bc1851d"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-ExtraLight.ttf",
+      "sha1": "9330dc57d70a274ff4e0e3f3f1ef52c0cd271be4"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-ExtraLightItalic.ttf",
+      "sha1": "c6662d586dcc88e217deae0c6ba7645f4718b6fc"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-Italic.ttf",
+      "sha1": "230530f0dc0fa769ff62c2ec3f3f91bdc0d21583"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-Light.ttf",
+      "sha1": "2d8d692af00dbe94dada19c78ac72a3d77e015e1"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-LightItalic.ttf",
+      "sha1": "8feb2832c9ce3f7e6d3d3b88a3bbc4ddbdc2df24"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-Regular.ttf",
+      "sha1": "e3f28097d9e45b12116bf47e471aef9a95df68dd"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-SemiBold.ttf",
+      "sha1": "70534915a6f536ded6544e13471676acaba0cd10"
+    },
+    {
+      "path": "src/Assets/Fonts/nunito/Nunito-SemiBoldItalic.ttf",
+      "sha1": "5024ed55b29da4ad5ff3b8cea589632fce140b1e"
+    }
+  ]
+}

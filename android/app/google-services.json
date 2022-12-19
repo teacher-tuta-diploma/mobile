@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "275581362354",
+    "project_id": "thanh-hung-customer",
+    "storage_bucket": "thanh-hung-customer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275581362354:android:06c559cb4608aa97c629ab",
+        "android_client_info": {
+          "package_name": "com.thanhhung.mobile.customer.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275581362354-1g58pk2goovo5racbjamuvv3kdrkn7c2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTSnrPrll0AX3sfogApoADIBhMBA-TuwM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275581362354-1g58pk2goovo5racbjamuvv3kdrkn7c2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "275581362354-iv20an619skni72a7m0aijrr8cgh0l3a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.thanhhung.mobile.customer.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
