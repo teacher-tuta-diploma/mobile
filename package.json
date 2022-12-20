@@ -16,7 +16,7 @@
     "i18n-dts:watch": "i18n-dts -w",
     "import-image": "cd src/Assets && ./bashImportImage.sh && cd .. && cd ..",
     "icon": "rn-toolbox icons ./src/Assets/Images/icon.png",
-    "splash": "rn-toolbox splash ./src/Assets/Images/splash.png",
+    "splash": "rn-toolbox splash ./src/Assets/Images/background_start.png",
     "link:font": "react-native-asset -a ./src/Assets/Fonts/nunito",
     "codepush:ios-stag": "appcenter codepush release-react -a Thanh-Hung-Customer/ios-customer -d Staging -t 1.0",
     "codepush:ios-prod": "appcenter codepush release-react -a Thanh-Hung-Customer/ios-customer -d Production -t 1.0",

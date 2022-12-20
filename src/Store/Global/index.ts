@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { DeliveryState } from '../Delivery'
 
-const initialState = {} as Partial<GlobalState>
+const initialState = {
+  isStart: true,
+} as Partial<GlobalState>
 
 const slice = createSlice({
   name: 'delivery',
@@ -22,10 +24,16 @@ const slice = createSlice({
         state.messageError = messageError
       }
     },
+    setIsStart: (state, { payload: { isStart } }: GlobalPayload) => {
+      if (typeof isStart !== 'undefined') {
+        state.isStart = isStart
+      }
+    },
   },
 })
 
-export const { setCloneTaxi, setCloneHome, setMessageError } = slice.actions
+export const { setCloneTaxi, setCloneHome, setMessageError, setIsStart } =
+  slice.actions
 
 export default slice.reducer
 
@@ -40,4 +48,5 @@ export type GlobalState = {
     message: string
     status: number
   }
+  isStart: boolean
 }

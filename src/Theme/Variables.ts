@@ -13,12 +13,13 @@ import { scale } from 'react-native-utils-scale'
  */
 export const Colors = {
   // Example colors:
+  backgroundPrimary: '#101213',
   transparent: 'rgba(0,0,0,0)',
   inputBackground: '#FFFFFF',
   white: '#ffffff',
   black: '#000000',
   text: '#212529',
-  primary: '#E14032',
+  primary: '#F1302B',
   success: '#28a745',
   error: '#dc3545',
   borderInput: '#A9A9A9',

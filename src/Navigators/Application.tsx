@@ -24,7 +24,8 @@ export const Stack = createStackNavigator<RootStackParamList>()
 const ApplicationNavigator = () => {
   const { Layout, darkMode, NavigationTheme } = useTheme()
   const { colors } = NavigationTheme
-  const accessToken = useAppSelector(state => state.authentication.accessToken)
+  const { accessToken } = useAppSelector(state => state.authentication)
+  const { isStart } = useAppSelector(state => state.global)
 
   useEffect(() => {
     if (!accessToken) {
@@ -37,9 +38,12 @@ const ApplicationNavigator = () => {
       <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
         <StatusBar barStyle={!darkMode ? 'light-content' : 'dark-content'} />
         <>
-          {!accessToken ? (
+          {isStart ? (
             <Stack.Navigator screenOptions={{ headerShown: false }}>
               <Stack.Screen name="StartScreen" component={StartContainer} />
+            </Stack.Navigator>
+          ) : !accessToken ? (
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
               <Stack.Screen name="LoginScreen" component={LoginContainer} />
               <Stack.Screen name="EditProfileScreen" component={EditProfile} />
               <Stack.Screen name="OtpScreen" component={OtpScreen} />
