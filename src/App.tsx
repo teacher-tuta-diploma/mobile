@@ -27,6 +27,7 @@ const App = () => {
     switch (status) {
       case codePush.SyncStatus.CHECKING_FOR_UPDATE:
         console.log('Checking for updates.')
+        SplashScreen.hide()
         break
       case codePush.SyncStatus.DOWNLOADING_PACKAGE:
         console.log('Downloading package.')

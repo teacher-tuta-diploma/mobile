@@ -7,10 +7,13 @@ import Image from '@/Components/Image'
 import { scale } from 'react-native-utils-scale'
 import { setIsStart } from '@/Store/Global'
 import { useAppDispatch } from '@/Hooks/useApp'
+import CircleLoading from '@/Components/CircleLoading'
+import useLoadingGlobal from '@/Hooks/useLoadingGlobal'
 const StartContainer = () => {
   const { MetricsSizes, FontSize, Images, Colors } = useTheme()
   const inset = useSafeAreaInsets()
   const dispatch = useAppDispatch()
+  const loading = useLoadingGlobal()
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,8 +22,12 @@ const StartContainer = () => {
           isStart: false,
         }),
       )
+      loading.toogleLoading?.(true)
+      setTimeout(() => {
+        loading.toogleLoading?.(false)
+      }, 3000)
     }, 2000)
-  }, [dispatch])
+  }, [dispatch, loading])
 
   return (
     <ImageBackground
@@ -46,19 +53,7 @@ const StartContainer = () => {
           </Text>
         </Container>
         <Container ai="center">
-          <Image
-            source={Images.elipse1}
-            w={scale(128)}
-            h={scale(48)}
-            resizeMode="contain"
-          />
-          <Image
-            source={Images.elipse1}
-            w={scale(118)}
-            h={scale(38)}
-            resizeMode="contain"
-            style={{ position: 'absolute', top: MetricsSizes.tiny / 2 }}
-          />
+          <CircleLoading />
         </Container>
       </Container>
     </ImageBackground>
