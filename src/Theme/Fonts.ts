@@ -8,7 +8,6 @@ export default function ({ FontSize, Colors, FontFamily }: ThemeVariables) {
   return StyleSheet.create({
     textTiny: {
       fontSize: FontSize.tiny,
-      color: Colors.text,
       fontFamily: FontFamily.NunitoRegular,
     },
     textSmall: {

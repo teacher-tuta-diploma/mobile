@@ -121,6 +121,60 @@ const LoginContainer = () => {
         h={scale(70)}
         resizeMode="contain"
       />
+
+      <Container ph={MetricsSizes.tiny}>
+        <Controller
+          control={control}
+          rules={{
+            required: true,
+            pattern: /([3|5|7|8|9])+([0-9]{8})\b/g,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <TextField
+              placeholderTextColor={Colors.textSecondary}
+              placeholder={i18next.t('Login.placeholder.numberPhone')}
+              maxLength={9}
+              keyboardType="numeric"
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              style={{
+                backgroundColor: Colors.backgroundSecondary,
+              }}
+            />
+          )}
+          name="phone"
+        />
+        <Container h={MetricsSizes.small} />
+        <Controller
+          control={control}
+          rules={{
+            required: true,
+            pattern: /([3|5|7|8|9])+([0-9]{8})\b/g,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <TextField
+              placeholderTextColor={Colors.textSecondary}
+              placeholder={i18next.t('Login.placeholder.password')}
+              maxLength={9}
+              keyboardType="numeric"
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              style={{
+                backgroundColor: Colors.backgroundSecondary,
+              }}
+            />
+          )}
+          name="password"
+        />
+        <Container h={MetricsSizes.small} />
+        <Container ai="center">
+          <Text style={[Fonts.textTiny, { color: Colors.textPrimary }]}>
+            Quên mật khẩu?
+          </Text>
+        </Container>
+      </Container>
     </Container>
   )
 }

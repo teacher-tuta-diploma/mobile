@@ -14,6 +14,9 @@ import { scale } from 'react-native-utils-scale'
 export const Colors = {
   // Example colors:
   backgroundPrimary: '#101213',
+  backgroundSecondary: '#1C1D21',
+  textPrimary: '#F1302B',
+  textSecondary: '#919392',
   transparent: 'rgba(0,0,0,0)',
   inputBackground: '#FFFFFF',
   white: '#ffffff',
