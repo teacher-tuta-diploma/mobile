@@ -1,13 +1,6 @@
-import {
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-  StatusBar,
-} from 'react-native'
+import { Text } from 'react-native'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useTheme } from '@/Hooks'
-import { Menu } from 'react-native-material-menu'
 import Image from '@/Components/Image'
 
 import { useHandleLoginMutation } from '@/Services/modules/users'
@@ -15,29 +8,17 @@ import useLoadingGlobal from '@/Hooks/useLoadingGlobal'
 import Container from '@/Components/Container'
 import { Controller, useForm } from 'react-hook-form'
 import TextField from '@/Components/TextInput'
-import Social from './components/Social'
 import { QueryStatus } from '@reduxjs/toolkit/dist/query'
 import KeyboardScrollView from '@/Components/KeyboardScrollView'
-import { Touchable } from '@/Components/Touchable'
 import { navigate } from '@/Navigators/utils'
 import { scale } from 'react-native-utils-scale'
 import i18next from 'i18next'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import LinearGradient from 'react-native-linear-gradient'
 
 const LoginContainer = () => {
-  const {
-    Layout,
-    Gutters,
-    Common,
-    Fonts,
-    NavigationTheme,
-    Images,
-    Colors,
-    MetricsSizes,
-  } = useTheme()
+  const { Fonts, Images, Colors, MetricsSizes } = useTheme()
   const insets = useSafeAreaInsets()
-  const { width, height } = { height: scale(40), width: scale(40) }
-  const [visible, setVisible] = useState(false)
   const [handleLogin, { data, error, isError, status, reset }] =
     useHandleLoginMutation({
       fixedCacheKey: 'Login',
@@ -89,10 +70,6 @@ const LoginContainer = () => {
     navigate('RegisterUserScreen', {})
   }, [])
 
-  const hideMenu = () => setVisible(false)
-
-  const showMenu = () => setVisible(true)
-
   const onForgotPassword = useCallback(() => {
     navigate('ForgotPassword', {})
   }, [])
@@ -114,66 +91,151 @@ const LoginContainer = () => {
   }, [])
 
   return (
-    <Container pt={insets.top} flex={1} ai="center">
+    <Container bg={Colors.backgroundPrimary} flex={1} ai="center">
       <Image
-        source={Images.logo1}
-        w={scale(70)}
-        h={scale(70)}
-        resizeMode="contain"
+        source={Images.topview_login}
+        w={MetricsSizes.deviceWidth}
+        h={MetricsSizes.deviceHeight / 4.5}
+        resizeMode="stretch"
       />
-
-      <Container ph={MetricsSizes.tiny}>
-        <Controller
-          control={control}
-          rules={{
-            required: true,
-            pattern: /([3|5|7|8|9])+([0-9]{8})\b/g,
-          }}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextField
-              placeholderTextColor={Colors.textSecondary}
-              placeholder={i18next.t('Login.placeholder.numberPhone')}
-              maxLength={9}
-              keyboardType="numeric"
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              style={{
-                backgroundColor: Colors.backgroundSecondary,
-              }}
-            />
-          )}
-          name="phone"
+      <LinearGradient
+        style={{
+          width: MetricsSizes.regular * 4,
+          height: MetricsSizes.regular * 4,
+          borderRadius: MetricsSizes.regular * 2,
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderWidth: 4,
+          borderColor: Colors.backgroundPrimary,
+          marginTop: -MetricsSizes.regular * 2,
+        }}
+        colors={Colors.backgroundGradientPrimary}
+        useAngle
+        angle={90}
+      >
+        <Image
+          source={Images.logo1}
+          w={MetricsSizes.regular * 3}
+          h={MetricsSizes.large * 3}
+          resizeMode="contain"
         />
-        <Container h={MetricsSizes.small} />
-        <Controller
-          control={control}
-          rules={{
-            required: true,
-            pattern: /([3|5|7|8|9])+([0-9]{8})\b/g,
-          }}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextField
-              placeholderTextColor={Colors.textSecondary}
-              placeholder={i18next.t('Login.placeholder.password')}
-              maxLength={9}
-              keyboardType="numeric"
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
+      </LinearGradient>
+      <Container h={MetricsSizes.regular} />
+      <KeyboardScrollView
+        style={{
+          flex: 1,
+          width: MetricsSizes.deviceWidth,
+        }}
+      >
+        <Container flex={1} ph={MetricsSizes.tiny}>
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+              pattern: /([3|5|7|8|9])+([0-9]{8})\b/g,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextField
+                placeholderTextColor={Colors.textSecondary}
+                placeholder={i18next.t('Login.placeholder.numberPhone')}
+                maxLength={9}
+                keyboardType="numeric"
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                style={{
+                  backgroundColor: Colors.backgroundSecondary,
+                }}
+              />
+            )}
+            name="phone"
+          />
+          <Container h={MetricsSizes.small} />
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+              pattern: /([3|5|7|8|9])+([0-9]{8})\b/g,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextField
+                placeholderTextColor={Colors.textSecondary}
+                placeholder={i18next.t('Login.placeholder.password')}
+                maxLength={9}
+                keyboardType="numeric"
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                style={{
+                  backgroundColor: Colors.backgroundSecondary,
+                }}
+              />
+            )}
+            name="password"
+          />
+          <Container h={MetricsSizes.small} />
+          <Container ai="center">
+            <Text style={[Fonts.textTiny, { color: Colors.textPrimary }]}>
+              Quên mật khẩu?
+            </Text>
+          </Container>
+          <Container h={MetricsSizes.small} />
+          <Container flexDr="row" jc="space-between">
+            <LinearGradient
               style={{
-                backgroundColor: Colors.backgroundSecondary,
+                width: MetricsSizes.large * 5,
+                height: MetricsSizes.large,
+                borderRadius: scale(10),
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
-            />
-          )}
-          name="password"
-        />
-        <Container h={MetricsSizes.small} />
-        <Container ai="center">
-          <Text style={[Fonts.textTiny, { color: Colors.textPrimary }]}>
-            Quên mật khẩu?
-          </Text>
+              colors={Colors.backgroundGradientPrimary}
+              useAngle
+              angle={90}
+            >
+              <Text style={[Fonts.textSmallBold, { color: Colors.white }]}>
+                Đăng nhập
+              </Text>
+            </LinearGradient>
+            <LinearGradient
+              style={{
+                width: MetricsSizes.large,
+                height: MetricsSizes.large,
+                borderRadius: scale(10),
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              colors={Colors.backgroundGradientPrimary}
+              useAngle
+              angle={90}
+            >
+              <Image
+                source={Images.finger}
+                w={MetricsSizes.small * 2}
+                h={MetricsSizes.small * 2}
+                resizeMode="contain"
+              />
+            </LinearGradient>
+          </Container>
         </Container>
+      </KeyboardScrollView>
+      <Container
+        bg={Colors.backgroundSecondary}
+        w={MetricsSizes.large}
+        h={MetricsSizes.large}
+        br={MetricsSizes.tiny}
+        ai="center"
+        jc="center"
+        as="center"
+        position="absolute"
+        bottom={insets.bottom + insets.top}
+      >
+        <Image
+          source={Images.face_id}
+          w={MetricsSizes.large - MetricsSizes.small}
+          h={MetricsSizes.large - MetricsSizes.small}
+          resizeMode="contain"
+        />
       </Container>
     </Container>
   )

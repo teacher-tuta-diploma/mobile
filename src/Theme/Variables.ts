@@ -7,6 +7,7 @@
 
 import { Dimensions } from 'react-native'
 import { scale } from 'react-native-utils-scale'
+import Color from 'color'
 
 /**
  * Colors
@@ -17,6 +18,10 @@ export const Colors = {
   backgroundSecondary: '#1C1D21',
   textPrimary: '#F1302B',
   textSecondary: '#919392',
+  backgroundGradientPrimary: [
+    Color('#FE3631', 'hex').alpha(1).toString(),
+    Color('#F39844', 'hex').alpha(1).toString(),
+  ],
   transparent: 'rgba(0,0,0,0)',
   inputBackground: '#FFFFFF',
   white: '#ffffff',
