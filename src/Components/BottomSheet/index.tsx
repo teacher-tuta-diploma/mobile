@@ -95,6 +95,9 @@ const BottomSheetCustom = forwardRef<BottomSheet, Props>(
         snapPoints={snapPoints ?? ['35%', '60%']}
         enablePanDownToClose
         index={-1}
+        backgroundStyle={{
+          backgroundColor: Colors.backgroundSecondary,
+        }}
         keyboardBehavior={keyboardBehavior ?? 'interactive'}
         keyboardBlurBehavior="restore"
         backdropComponent={renderBackDrop}

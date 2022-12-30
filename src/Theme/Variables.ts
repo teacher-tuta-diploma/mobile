@@ -28,6 +28,7 @@ export const Colors = {
   black: '#000000',
   text: '#212529',
   primary: '#F1302B',
+  secondary: '#FFA901',
   success: '#28a745',
   error: '#dc3545',
   borderInput: '#A9A9A9',

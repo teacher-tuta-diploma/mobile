@@ -1,8 +1,7 @@
 import { Text } from 'react-native'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useTheme } from '@/Hooks'
 import Image from '@/Components/Image'
-
 import { useHandleLoginMutation } from '@/Services/modules/users'
 import useLoadingGlobal from '@/Hooks/useLoadingGlobal'
 import Container from '@/Components/Container'
@@ -15,6 +14,8 @@ import { scale } from 'react-native-utils-scale'
 import i18next from 'i18next'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import LinearGradient from 'react-native-linear-gradient'
+import { Touchable } from '@/Components/Touchable'
+import useBottomSheet from '@/Hooks/useBottomSheet'
 
 const LoginContainer = () => {
   const { Fonts, Images, Colors, MetricsSizes } = useTheme()
@@ -23,18 +24,7 @@ const LoginContainer = () => {
     useHandleLoginMutation({
       fixedCacheKey: 'Login',
     })
-  console.log(
-    '🛠 LOG: 🚀 --> ------------------------------------------------------------------------🛠 LOG: 🚀 -->',
-  )
-  console.log(
-    '🛠 LOG: 🚀 --> ~ file: index.tsx ~ line 39 ~ LoginContainer ~ data',
-    data,
-    error,
-    isError,
-  )
-  console.log(
-    '🛠 LOG: 🚀 --> ------------------------------------------------------------------------🛠 LOG: 🚀 -->',
-  )
+  const bottomSheet = useBottomSheet()
 
   const loading = useLoadingGlobal()
   const {
@@ -66,6 +56,64 @@ const LoginContainer = () => {
     [handleLogin, loading],
   )
 
+  const onLoginBiometric = useCallback(() => {
+    bottomSheet.onShowBottomSheet?.(
+      <Container flex={1}>
+        <Container ai="center">
+          <Text
+            style={[
+              Fonts.textMediumBold,
+              { color: Colors.white, marginTop: MetricsSizes.regular },
+            ]}
+          >
+            Xác nhận vân tay
+          </Text>
+          <Text
+            style={[
+              Fonts.textSmall,
+              { color: Colors.textSecondary, marginTop: MetricsSizes.tiny },
+            ]}
+          >
+            Đăng nhập ứng dụng
+          </Text>
+          <Touchable mt={MetricsSizes.small * 3}>
+            <Image
+              source={Images.finger}
+              w={MetricsSizes.large}
+              h={MetricsSizes.large}
+              resizeMode="contain"
+              tintColor={Colors.secondary}
+            />
+          </Touchable>
+        </Container>
+        <Container
+          position="absolute"
+          bottom={insets.bottom}
+          right={MetricsSizes.tiny}
+          w={'100%'}
+          ai="flex-end"
+        >
+          <Text style={[Fonts.textSmall, { color: Colors.textSecondary }]}>
+            Quay lại
+          </Text>
+        </Container>
+      </Container>,
+    )
+  }, [
+    Colors.secondary,
+    Colors.textSecondary,
+    Colors.white,
+    Fonts.textMediumBold,
+    Fonts.textSmall,
+    Images.finger,
+    MetricsSizes.large,
+    MetricsSizes.regular,
+    MetricsSizes.small,
+    MetricsSizes.tiny,
+    bottomSheet,
+    insets.bottom,
+  ])
+
   const onRegister = useCallback(() => {
     navigate('RegisterUserScreen', {})
   }, [])
@@ -83,12 +131,6 @@ const LoginContainer = () => {
   /**
    * TODO reset state login
    */
-  useEffect(() => {
-    return () => {
-      reset()
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   return (
     <Container bg={Colors.backgroundPrimary} flex={1} ai="center">
@@ -181,41 +223,44 @@ const LoginContainer = () => {
           </Container>
           <Container h={MetricsSizes.small} />
           <Container flexDr="row" jc="space-between">
-            <LinearGradient
-              style={{
-                width: MetricsSizes.large * 5,
-                height: MetricsSizes.large,
-                borderRadius: scale(10),
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-              colors={Colors.backgroundGradientPrimary}
-              useAngle
-              angle={90}
-            >
-              <Text style={[Fonts.textSmallBold, { color: Colors.white }]}>
-                Đăng nhập
-              </Text>
-            </LinearGradient>
-            <LinearGradient
-              style={{
-                width: MetricsSizes.large,
-                height: MetricsSizes.large,
-                borderRadius: scale(10),
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-              colors={Colors.backgroundGradientPrimary}
-              useAngle
-              angle={90}
-            >
-              <Image
-                source={Images.finger}
-                w={MetricsSizes.small * 2}
-                h={MetricsSizes.small * 2}
-                resizeMode="contain"
-              />
-            </LinearGradient>
+            <Touchable flex={7.5 / 10}>
+              <LinearGradient
+                style={{
+                  height: MetricsSizes.large,
+                  borderRadius: scale(10),
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+                colors={Colors.backgroundGradientPrimary}
+                useAngle
+                angle={90}
+              >
+                <Text style={[Fonts.textSmallBold, { color: Colors.white }]}>
+                  Đăng nhập
+                </Text>
+              </LinearGradient>
+            </Touchable>
+            <Touchable onPress={onLoginBiometric} ai="flex-end" flex={2 / 10}>
+              <LinearGradient
+                style={{
+                  width: MetricsSizes.large,
+                  height: MetricsSizes.large,
+                  borderRadius: scale(10),
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+                colors={Colors.backgroundGradientPrimary}
+                useAngle
+                angle={90}
+              >
+                <Image
+                  source={Images.finger}
+                  w={MetricsSizes.small * 2}
+                  h={MetricsSizes.small * 2}
+                  resizeMode="contain"
+                />
+              </LinearGradient>
+            </Touchable>
           </Container>
         </Container>
       </KeyboardScrollView>
