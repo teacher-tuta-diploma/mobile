@@ -16,6 +16,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import LinearGradient from 'react-native-linear-gradient'
 import { Touchable } from '@/Components/Touchable'
 import useBottomSheet from '@/Hooks/useBottomSheet'
+import { setAccessToken } from '@/Store/Authentication'
+import { useDispatch } from 'react-redux'
 
 const LoginContainer = () => {
   const { Fonts, Images, Colors, MetricsSizes } = useTheme()
@@ -25,7 +27,7 @@ const LoginContainer = () => {
       fixedCacheKey: 'Login',
     })
   const bottomSheet = useBottomSheet()
-
+  const dispatch = useDispatch()
   const loading = useLoadingGlobal()
   const {
     control,
@@ -41,19 +43,24 @@ const LoginContainer = () => {
   const onLogin = useCallback(
     (data: any) => {
       // navigate('Main', {})
-      loading.toogleLoading?.(true)
-      handleLogin({
-        phone:
-          data.phone[0] === '0'
-            ? `+84${data.phone.slice(1, data.phone.length)}`
-            : `+84${data.phone}`,
-        password: data.password,
-        callback() {
-          loading.toogleLoading?.(false)
-        },
-      })
+      // loading.toogleLoading?.(true)
+      // handleLogin({
+      //   phone:
+      //     data.phone[0] === '0'
+      //       ? `+84${data.phone.slice(1, data.phone.length)}`
+      //       : `+84${data.phone}`,
+      //   password: data.password,
+      //   callback() {
+      //     loading.toogleLoading?.(false)
+      //   },
+      // })
+      dispatch(
+        setAccessToken({
+          accessToken: 'data?.accessToken',
+        }),
+      )
     },
-    [handleLogin, loading],
+    [dispatch],
   )
 
   const onLoginBiometric = useCallback(() => {
@@ -223,7 +230,7 @@ const LoginContainer = () => {
           </Container>
           <Container h={MetricsSizes.small} />
           <Container flexDr="row" jc="space-between">
-            <Touchable flex={7.5 / 10}>
+            <Touchable onPress={onLogin} flex={7.5 / 10}>
               <LinearGradient
                 style={{
                   height: MetricsSizes.large,

@@ -4,7 +4,7 @@ import LargeHeader from '@/Components/LargeHeader'
 import Commission from './components/Commission'
 import Promotion from './components/Promotion'
 import PromotionNews from './components/News'
-import { ScrollView } from 'react-native'
+import { ScrollView, Text } from 'react-native'
 import { useAsyncEffect, useTheme } from '@/Hooks'
 import { ProductT } from '@/Store/Delivery/type'
 import {
@@ -156,15 +156,7 @@ const Home = () => {
 
   return (
     <Container>
-      <LargeHeader onPressTab={onPressProduct} />
-      <Container h={MetricsSizes.small} bg={Colors.primary} />
-      <ScrollView>
-        <Commission />
-        <Promotion />
-        <Advertisements />
-        <PromotionNews />
-        <Container h={MetricsSizes.deviceHeight / 3} />
-      </ScrollView>
+      <Text>asdda</Text>
     </Container>
   )
 }

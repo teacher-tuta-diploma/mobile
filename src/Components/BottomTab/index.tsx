@@ -10,6 +10,7 @@ import PopupMessage from './components/PopupMessage'
 import { useAppSelector } from '@/Hooks/useApp'
 import { Platform } from 'react-native'
 import { NotificationDataT } from '@/Store/Message/type'
+import LinearGradient from 'react-native-linear-gradient'
 
 const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
   const { Colors, Images, MetricsSizes } = useTheme()
@@ -30,6 +31,10 @@ const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
         icon: Images.order,
       },
       {
+        name: 'Qrcode',
+        icon: Images.qr_code,
+      },
+      {
         name: 'Notifications',
         icon: Images.bell,
       },
@@ -39,7 +44,13 @@ const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
       },
       ,
     ]
-  }, [Images.bell, Images.home, Images.order, Images.user_round])
+  }, [
+    Images.bell,
+    Images.home,
+    Images.order,
+    Images.qr_code,
+    Images.user_round,
+  ])
 
   const routes = useMemo(() => {
     return state.routes.map((value, index) => {
@@ -49,48 +60,27 @@ const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
       }
       if (index === 2) {
         return (
-          <>
-            {dataNotify && !dataNotify?.params?.paymentVnpay && (
-              <Container
-                bottom={MetricsSizes.regular * 3}
-                bg={Colors.green1}
-                w={MetricsSizes.large * 5}
-                position="absolute"
-                ph={MetricsSizes.tiny}
-                pv={MetricsSizes.tiny}
-                br={MetricsSizes.tiny}
-              >
-                <PopupMessage />
-              </Container>
-            )}
-            <Touchable
-              onPress={() => {
-                onPress()
+          <Touchable onPress={onPress} mt={-MetricsSizes.large / 2}>
+            <LinearGradient
+              style={{
+                width: MetricsSizes.large,
+                height: MetricsSizes.large,
+                borderRadius: MetricsSizes.large / 2,
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
-              bg={isFocused ? Colors.grey4 : Colors.transparent}
-              ai="center"
-              br={MetricsSizes.tiny / 2}
-              ph={MetricsSizes.tiny / 2}
-              pv={MetricsSizes.tiny / 2}
+              colors={Colors.backgroundGradientPrimary}
+              useAngle
+              angle={90}
             >
               <Image
-                source={icons[index]?.icon}
-                w={MetricsSizes.regular}
-                h={MetricsSizes.regular}
+                source={Images.qr_code}
+                w={MetricsSizes.small * 1.5}
+                h={MetricsSizes.small * 1.5}
                 resizeMode="contain"
               />
-              {notificationPusherData && (
-                <Container
-                  w={scale(10)}
-                  h={scale(10)}
-                  br={scale(5)}
-                  bg={Colors.green2}
-                  position="absolute"
-                  right={0}
-                />
-              )}
-            </Touchable>
-          </>
+            </LinearGradient>
+          </Touchable>
         )
       }
       return (
@@ -113,17 +103,16 @@ const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
       )
     })
   }, [
-    Colors.green1,
-    Colors.green2,
+    Colors.backgroundGradientPrimary,
     Colors.grey4,
     Colors.transparent,
+    Images.qr_code,
     MetricsSizes.large,
     MetricsSizes.regular,
+    MetricsSizes.small,
     MetricsSizes.tiny,
-    dataNotify,
     icons,
     navigation,
-    notificationPusherData,
     state.index,
     state.routes,
   ])
@@ -158,9 +147,11 @@ const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
     <Container
       pv={MetricsSizes.tiny}
       pb={Platform.OS === 'ios' ? inset.bottom : MetricsSizes.tiny}
-      bg={Colors.bottomTab}
+      bg={Colors.backgroundSecondary}
       jc="space-around"
       flexDr="row"
+      br={MetricsSizes.tiny}
+      bc="#000707"
     >
       {routes}
     </Container>

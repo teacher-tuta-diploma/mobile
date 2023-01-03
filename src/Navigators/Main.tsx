@@ -10,6 +10,7 @@ import ProfileUserStack from './ProfileUser'
 import { useRoute, RouteProp } from '@react-navigation/native'
 import { RootStackParamList } from '@/Navigators/utils'
 import Notification from '@/Containers/Notification'
+import QrScanContainer from '@/Containers/QrScanContainer'
 
 const Tab = createBottomTabNavigator()
 
@@ -34,6 +35,11 @@ const MainNavigator = () => {
     >
       <Tab.Screen options={headerOption} name="Home" component={Home} />
       <Tab.Screen options={headerOption} name="Order" component={MyOrder} />
+      <Tab.Screen
+        options={headerOption}
+        name="Qrcode"
+        component={QrScanContainer}
+      />
       <Tab.Screen
         options={headerOption}
         name="Notifications"

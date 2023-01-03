@@ -18,6 +18,7 @@ export const Colors = {
   backgroundSecondary: '#1C1D21',
   textPrimary: '#F1302B',
   textSecondary: '#919392',
+  tabPrimary: '#666873',
   backgroundGradientPrimary: [
     Color('#FE3631', 'hex').alpha(1).toString(),
     Color('#F39844', 'hex').alpha(1).toString(),

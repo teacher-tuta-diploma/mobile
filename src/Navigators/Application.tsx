@@ -22,7 +22,7 @@ export const Stack = createStackNavigator<RootStackParamList>()
 
 // @refresh reset
 const ApplicationNavigator = () => {
-  const { Layout, darkMode, NavigationTheme } = useTheme()
+  const { Layout, darkMode, NavigationTheme, Colors } = useTheme()
   const { colors } = NavigationTheme
   const { accessToken } = useAppSelector(state => state.authentication)
   const { isStart } = useAppSelector(state => state.global)
@@ -34,7 +34,7 @@ const ApplicationNavigator = () => {
   }, [accessToken])
 
   return (
-    <View style={[Layout.fill, { backgroundColor: colors.card }]}>
+    <View style={[Layout.fill, { backgroundColor: Colors.backgroundPrimary }]}>
       <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
         <StatusBar barStyle={!darkMode ? 'light-content' : 'dark-content'} />
         <>
@@ -80,6 +80,9 @@ const ApplicationNavigator = () => {
                 component={MainNavigator}
                 options={{
                   animationEnabled: false,
+                  cardStyle: {
+                    backgroundColor: Colors.backgroundPrimary,
+                  },
                 }}
               />
             </Stack.Navigator>
