@@ -6,9 +6,7 @@ import { Touchable } from '../Touchable'
 import Image from '../Image'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { scale } from 'react-native-utils-scale'
-import PopupMessage from './components/PopupMessage'
 import { useAppSelector } from '@/Hooks/useApp'
-import { Platform } from 'react-native'
 import { NotificationDataT } from '@/Store/Message/type'
 import LinearGradient from 'react-native-linear-gradient'
 
@@ -144,16 +142,20 @@ const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
   }, [notificationPusherData?.additionalData])
 
   return (
-    <Container
-      pv={MetricsSizes.tiny}
-      pb={Platform.OS === 'ios' ? inset.bottom : MetricsSizes.tiny}
-      bg={Colors.backgroundSecondary}
-      jc="space-around"
-      flexDr="row"
-      br={MetricsSizes.tiny}
-      bc="#000707"
-    >
-      {routes}
+    <Container>
+      <Images.TabbarSvg
+        style={{ position: 'absolute', top: -scale(56) }}
+        width={MetricsSizes.deviceWidth}
+        height={scale(160)}
+      />
+      <Container
+        mh={MetricsSizes.tiny}
+        jc="space-between"
+        flexDr="row"
+        mb={inset.bottom}
+      >
+        {routes}
+      </Container>
     </Container>
   )
 }

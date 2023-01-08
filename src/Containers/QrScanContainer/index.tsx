@@ -18,6 +18,7 @@ const QrScanContainer = () => {
       <Container pt={MetricsSizes.tiny} ph={MetricsSizes.tiny}>
         <Tabbar />
       </Container>
+      <Images.TabbarSvg width={300} height={100} />
     </Container>
   )
 }

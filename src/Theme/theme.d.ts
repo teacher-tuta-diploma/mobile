@@ -44,3 +44,8 @@ export type CommonParams<C> = ThemeVariables &
     Theme<typeof fonts, typeof gutters, typeof images, typeof layout, C>,
     'Layout' | 'Gutters' | 'Fonts' | 'Images'
   >
+
+declare module '*.svg' {
+  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>
+  export default content
+}
