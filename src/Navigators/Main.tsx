@@ -11,6 +11,7 @@ import { useRoute, RouteProp } from '@react-navigation/native'
 import { RootStackParamList } from '@/Navigators/utils'
 import Notification from '@/Containers/Notification'
 import QrScanContainer from '@/Containers/QrScanContainer'
+import ProfileScreen from '@/Containers/ProfileScreen'
 
 const Tab = createBottomTabNavigator()
 
@@ -42,8 +43,8 @@ const MainNavigator = () => {
       />
       <Tab.Screen
         options={headerOption}
-        name="Notifications"
-        component={Notification}
+        name="ProfileScreen"
+        component={ProfileScreen}
       />
       <Tab.Screen
         options={headerOption}

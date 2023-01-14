@@ -140,6 +140,8 @@ export type RootStackParamList = {
   AdvertisementScreen: {
     advertisements: AdvertisementsT
   }
+  ProfileScreen: undefined
+  ProfileDetailScreen: { name: string }
 }
 interface StaticNavigation<
   Routes extends string,

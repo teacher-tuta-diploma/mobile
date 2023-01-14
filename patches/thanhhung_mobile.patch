@@ -49,6 +49,7 @@ index 37fcc12..7270e60 100644
 +        tools:replace="android:theme" />
 
 diff --git diff --git node_modules/@react-native-community/cameraroll/android/src/main/java/com/reactnativecommunity/cameraroll/CameraRollModule.java
+diff --git diff --git node_modules\react-native-create-thumbnail\android\src\main\java\com\createthumbnail\CreateThumbnailModule.java
 -    retriever.release();
 + try {
 +  retriever.release();
@@ -61,3 +62,10 @@ try {
  } catch (IOException ex) {
  // handle the exception here
  }
+
+diff --git diff --git node_modules/@notifee/react-native/android/build.gradle
+ repositories {
+      google()
+      mavenCentral()
++ jcenter()
+}

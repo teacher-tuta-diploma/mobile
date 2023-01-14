@@ -62,6 +62,7 @@ export const Colors = {
   blurBg: 'rgba(73, 73, 73, 0.33)',
   bgNew: 'rgba(33, 33, 33, 0.5)',
   bgInactive: '#ECD5D5',
+  neutral500: '#DFDFDF',
 }
 
 export const NavigationColors = {

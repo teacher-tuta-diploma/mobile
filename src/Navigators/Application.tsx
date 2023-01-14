@@ -17,6 +17,7 @@ import RegisterSuccess from '@/Containers/RegisterSuccess'
 import ForgotPassword from '@/Containers/ForgotPassword'
 import OtpScreenForgotPassword from '@/Containers/OtpScreenForgotPassword'
 import SetupPassword from '@/Containers/SetupPassword'
+import ProfileDetailScreen from '@/Containers/ProfileDetailScreen'
 
 export const Stack = createStackNavigator<RootStackParamList>()
 
@@ -36,7 +37,7 @@ const ApplicationNavigator = () => {
   return (
     <View style={[Layout.fill, { backgroundColor: Colors.backgroundPrimary }]}>
       <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
-        <StatusBar barStyle={!darkMode ? 'light-content' : 'dark-content'} />
+        <StatusBar barStyle={'light-content'} backgroundColor={Colors.black} />
         <>
           {isStart ? (
             <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -83,6 +84,13 @@ const ApplicationNavigator = () => {
                   cardStyle: {
                     backgroundColor: Colors.backgroundPrimary,
                   },
+                }}
+              />
+              <Stack.Screen
+                name="ProfileDetailScreen"
+                component={ProfileDetailScreen}
+                options={{
+                  animationEnabled: false,
                 }}
               />
             </Stack.Navigator>
