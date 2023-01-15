@@ -140,6 +140,11 @@ export type RootStackParamList = {
   AdvertisementScreen: {
     advertisements: AdvertisementsT
   }
+  Qrcode: undefined
+  QrcodeScan: undefined
+  Activity: undefined
+  Identifier: undefined
+  Setting: undefined
 }
 interface StaticNavigation<
   Routes extends string,
