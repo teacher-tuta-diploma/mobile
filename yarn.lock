@@ -8083,6 +8083,13 @@ react-native-auto-height-image@^3.2.4:
   dependencies:
     prop-types "^15.7.2"
 
+react-native-barcode-mask@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/react-native-barcode-mask/-/react-native-barcode-mask-1.2.4.tgz#271b868d1d9040e04b9f8f32ec4ee6f6a2639b3b"
+  integrity sha512-Jh3mEs/xUBs/z9mKkj2mM07MMQ2SdtW9mU4FOo5DQyA2kDte6lW87vIYFkWw1nxpzc7sy28ahMsgId8LTtKZsg==
+  dependencies:
+    prop-types "^15.6.2"
+
 react-native-big-list@^1.5.4:
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/react-native-big-list/-/react-native-big-list-1.5.4.tgz#7bd55a27a06a595a62d3a215b48d74565bff1e3e"
@@ -8356,6 +8363,11 @@ react-native-video@^5.2.1:
     keymirror "^0.1.1"
     prop-types "^15.7.2"
     shaka-player "^2.5.9"
+
+react-native-vision-camera@^2.15.2:
+  version "2.15.2"
+  resolved "https://registry.yarnpkg.com/react-native-vision-camera/-/react-native-vision-camera-2.15.2.tgz#96a17c8b4e557df317734897853a861e0cfbc3ed"
+  integrity sha512-pkVj0r2nbZaj3+bB9CGPNistCUyoCgS2SmawzugrZs5oMlFWlgZYuJj+6s3Q98xTGgV/8/ST0njohB6soDi0VA==
 
 react-native-voip-push-notification@^3.3.0:
   version "3.3.0"

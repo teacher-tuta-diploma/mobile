@@ -18,6 +18,7 @@ export const Colors = {
   backgroundSecondary: '#1C1D21',
   textPrimary: '#F1302B',
   textSecondary: '#919392',
+  textPlaceholder: '#BCBDBD',
   tabPrimary: '#666873',
   backgroundGradientPrimary: [
     Color('#FE3631', 'hex').alpha(1).toString(),
@@ -82,11 +83,11 @@ export const FontFamily = {
  * FontSize
  */
 export const FontSize = {
-  tiny: scale(14),
-  small: scale(16),
-  regular: scale(20),
-  medium: scale(30),
-  large: scale(40),
+  tiny: scale(12),
+  small: scale(14),
+  regular: scale(16),
+  medium: scale(20),
+  large: scale(30),
 }
 
 /**

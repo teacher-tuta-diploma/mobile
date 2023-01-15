@@ -22,10 +22,6 @@ const StartContainer = () => {
           isStart: false,
         }),
       )
-      loading.toogleLoading?.(true)
-      setTimeout(() => {
-        loading.toogleLoading?.(false)
-      }, 3000)
     }, 2000)
   }, [dispatch, loading])
 

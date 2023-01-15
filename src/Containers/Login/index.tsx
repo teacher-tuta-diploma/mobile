@@ -42,18 +42,6 @@ const LoginContainer = () => {
 
   const onLogin = useCallback(
     (data: any) => {
-      // navigate('Main', {})
-      // loading.toogleLoading?.(true)
-      // handleLogin({
-      //   phone:
-      //     data.phone[0] === '0'
-      //       ? `+84${data.phone.slice(1, data.phone.length)}`
-      //       : `+84${data.phone}`,
-      //   password: data.password,
-      //   callback() {
-      //     loading.toogleLoading?.(false)
-      //   },
-      // })
       dispatch(
         setAccessToken({
           accessToken: 'data?.accessToken',
