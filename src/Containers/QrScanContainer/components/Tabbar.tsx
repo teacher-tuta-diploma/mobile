@@ -26,9 +26,9 @@ const Tab = ({ text, isActive, onPress }) => {
     </Touchable>
   )
 }
-const Tabbar = () => {
+const Tabbar = ({ onChangeTab }) => {
   const { Layout, Colors, MetricsSizes } = useTheme()
-  const [activeTab, setActiveTab] = useState<'1' | '2'>('1')
+  const [activeTab, setActiveTab] = useState<'activity' | 'confirm'>('activity')
   return (
     <Container
       h={MetricsSizes.large}
@@ -41,18 +41,20 @@ const Tabbar = () => {
     >
       <Tab
         onPress={() => {
-          setActiveTab('1')
+          setActiveTab('activity')
+          onChangeTab('activity')
         }}
         text="Hoạt động"
-        isActive={activeTab === '1'}
+        isActive={activeTab === 'activity'}
       />
 
       <Tab
         onPress={() => {
-          setActiveTab('2')
+          setActiveTab('confirm')
+          onChangeTab('confirm')
         }}
         text="Xác nhận"
-        isActive={activeTab === '2'}
+        isActive={activeTab === 'confirm'}
       />
     </Container>
   )

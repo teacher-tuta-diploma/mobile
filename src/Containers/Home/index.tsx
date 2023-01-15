@@ -1,10 +1,6 @@
 import React, { useCallback, useEffect } from 'react'
 import Container from '@/Components/Container'
-import LargeHeader from '@/Components/LargeHeader'
-import Commission from './components/Commission'
-import Promotion from './components/Promotion'
-import PromotionNews from './components/News'
-import { ScrollView, Text } from 'react-native'
+import { FlatList, ScrollView, Text } from 'react-native'
 import { useAsyncEffect, useTheme } from '@/Hooks'
 import { ProductT } from '@/Store/Delivery/type'
 import {
@@ -18,10 +14,11 @@ import { ACCOUNT_META, ACCOUNT_METADATA_KEY } from '@/Store/Delivery/enum'
 import { setReceivedNotification } from '@/Store/Message'
 import useCall from '@/Hooks/useCall'
 import AuthManager from '../CallSendBird/libs/AuthManager'
-import Advertisements from './components/Advertisements'
+import SessionItem from './components/SessionItem'
+import SearchBox from './components/SearchBox'
 
 const Home = () => {
-  // const { MetricsSizes, Colors } = useTheme()
+  const { MetricsSizes, Colors } = useTheme()
   // const loading = useLoadingGlobal()
   // const dispatch = useAppDispatch()
   // const callHook = useCall()
@@ -50,20 +47,9 @@ const Home = () => {
   //   [dispatch, handleCreateOrder],
   // )
 
-  // /**
-  //  * TODO : nếu có player id thì update lên server
-  //  */
-  // useEffect(() => {
-  //   if (deviceState?.userId) {
-  //     handleSetPlayerId({
-  //       player_id: deviceState?.userId ?? '',
-  //     })
-  //   }
-  // }, [deviceState?.userId, handleSetPlayerId])
-
-  // useEffect(() => {
-  //   loading.toogleLoading?.(propsSetPlayerId.isLoading)
-  // }, [loading, propsSetPlayerId.isLoading])
+  const renderItem = useCallback(() => {
+    return <SessionItem />
+  }, [])
 
   // useEffect(() => {
   //   return () => {
@@ -155,8 +141,23 @@ const Home = () => {
   // }, [account])
 
   return (
-    <Container>
-      <Text>asdda</Text>
+    <Container bg={Colors.backgroundPrimary} flex={1}>
+      <SearchBox />
+      <FlatList
+        data={[1, 2, 3]}
+        renderItem={renderItem}
+        removeClippedSubviews
+        keyboardDismissMode={'on-drag'}
+        keyboardShouldPersistTaps={'handled'}
+        // ref={scrollRef}
+        onEndReachedThreshold={0.5}
+        // onEndReached={onTopReached}
+        scrollEventThrottle={16}
+        contentContainerStyle={{
+          marginHorizontal: MetricsSizes.tiny,
+        }}
+        // onScroll={_onScroll}
+      />
     </Container>
   )
 }

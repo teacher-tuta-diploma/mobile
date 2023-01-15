@@ -7,7 +7,6 @@ console.log('🛠 LOG: 🚀 --> ~ file: Images.ts:3 ~ TabbarSvg', TabbarSvg)
 console.log(
   '🛠 LOG: 🚀 --> ---------------------------------------------------------🛠 LOG: 🚀 -->',
 )
-
 export default function ({}: ThemeVariables) {
   return {
     KMAuth: require('@/Assets/Images/KMAuth.png'),
@@ -84,6 +83,7 @@ export default function ({}: ThemeVariables) {
     self_select_car: require('@/Assets/Images/self_select_car.png'),
     send_msg: require('@/Assets/Images/send_msg.png'),
     setting: require('@/Assets/Images/setting.png'),
+    setting_active: require('@/Assets/Images/setting_active.png'),
     shipper: require('@/Assets/Images/shipper.png'),
     splash: require('@/Assets/Images/splash.png'),
     splash_center: require('@/Assets/Images/splash_center.png'),

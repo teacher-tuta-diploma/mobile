@@ -9,6 +9,7 @@ import { scale } from 'react-native-utils-scale'
 import { useAppSelector } from '@/Hooks/useApp'
 import { NotificationDataT } from '@/Store/Message/type'
 import LinearGradient from 'react-native-linear-gradient'
+import { navigate } from '@/Navigators/utils'
 
 const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
   const { Colors, Images, MetricsSizes } = useTheme()
@@ -26,7 +27,7 @@ const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
       },
       {
         name: 'Order',
-        icon: Images.order,
+        icon: Images.activity,
       },
       {
         name: 'Qrcode',
@@ -34,20 +35,53 @@ const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
       },
       {
         name: 'Notifications',
-        icon: Images.bell,
+        icon: Images.identifier,
       },
       {
         name: 'Profile',
-        icon: Images.user_round,
+        icon: Images.setting,
       },
       ,
     ]
   }, [
-    Images.bell,
+    Images.activity,
     Images.home,
-    Images.order,
+    Images.identifier,
     Images.qr_code,
-    Images.user_round,
+    Images.setting,
+  ])
+
+  const iconActives = useMemo(() => {
+    // eslint-disable-next-line no-sparse-arrays
+    return [
+      {
+        name: 'Home',
+        icon: Images.home_active,
+      },
+      {
+        name: 'Order',
+        icon: Images.activity_active,
+      },
+      {
+        name: 'Qrcode',
+        icon: Images.qr_code,
+      },
+      {
+        name: 'Notifications',
+        icon: Images.identifier_active,
+      },
+      {
+        name: 'Profile',
+        icon: Images.setting_active,
+      },
+      ,
+    ]
+  }, [
+    Images.activity_active,
+    Images.home_active,
+    Images.identifier_active,
+    Images.qr_code,
+    Images.setting_active,
   ])
 
   const routes = useMemo(() => {
@@ -58,7 +92,12 @@ const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
       }
       if (index === 2) {
         return (
-          <Touchable onPress={onPress} mt={-MetricsSizes.large / 2}>
+          <Touchable
+            onPress={() => {
+              navigate('QrcodeScan', undefined)
+            }}
+            mt={-MetricsSizes.large / 2}
+          >
             <LinearGradient
               style={{
                 width: MetricsSizes.large,
@@ -85,7 +124,6 @@ const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
         <Touchable
           key={index}
           ai="center"
-          bg={isFocused ? Colors.grey4 : Colors.transparent}
           onPress={onPress}
           br={MetricsSizes.tiny / 2}
           ph={MetricsSizes.tiny / 2}
@@ -94,7 +132,7 @@ const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
           <Image
             w={MetricsSizes.regular}
             h={MetricsSizes.regular}
-            source={icons[index]?.icon}
+            source={!isFocused ? icons[index]?.icon : iconActives[index]?.icon}
             resizeMode={'contain'}
           />
         </Touchable>
@@ -102,13 +140,12 @@ const BottomTab = ({ navigation, state }: BottomTabBarProps) => {
     })
   }, [
     Colors.backgroundGradientPrimary,
-    Colors.grey4,
-    Colors.transparent,
     Images.qr_code,
     MetricsSizes.large,
     MetricsSizes.regular,
     MetricsSizes.small,
     MetricsSizes.tiny,
+    iconActives,
     icons,
     navigation,
     state.index,

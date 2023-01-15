@@ -17,6 +17,7 @@ import RegisterSuccess from '@/Containers/RegisterSuccess'
 import ForgotPassword from '@/Containers/ForgotPassword'
 import OtpScreenForgotPassword from '@/Containers/OtpScreenForgotPassword'
 import SetupPassword from '@/Containers/SetupPassword'
+import QrScanContainer from '@/Containers/QrScanContainer'
 import ProfileDetailScreen from '@/Containers/ProfileDetailScreen'
 import ChangePassword from '@/Containers/ChangePassword'
 import ConfirmChangePassword from '@/Containers/ConfirmChangePassword'
@@ -133,6 +134,7 @@ const ApplicationNavigator = () => {
                   animationEnabled: false,
                 }}
               />
+              <Stack.Screen name="QrcodeScan" component={QrScanContainer} />
             </Stack.Navigator>
           )}
         </>

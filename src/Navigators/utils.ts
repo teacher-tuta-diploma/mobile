@@ -146,6 +146,11 @@ export type RootStackParamList = {
   }
   ProfileScreen: undefined
   ProfileDetailScreen: { name: string }
+  Qrcode: undefined
+  QrcodeScan: undefined
+  Activity: undefined
+  Identifier: undefined
+  Setting: undefined
 }
 interface StaticNavigation<
   Routes extends string,
