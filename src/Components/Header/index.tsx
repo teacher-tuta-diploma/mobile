@@ -12,7 +12,7 @@ type Props = {
   textLarge?: boolean
 }
 const Header = ({ title, noBack = false, textLarge }: Props) => {
-  const { Layout, Fonts, Images, Colors, MetricsSizes } = useTheme()
+  const { Layout, Fonts, Icons, Colors, MetricsSizes } = useTheme()
 
   const navigation = useNavigation()
 
@@ -25,7 +25,7 @@ const Header = ({ title, noBack = false, textLarge }: Props) => {
         {!noBack && (
           <TouchableOpacity onPress={navigation.goBack}>
             <Image
-              source={Images.back}
+              source={Icons.back_2}
               w={MetricsSizes.regular}
               h={MetricsSizes.small}
               tintColor={Colors.tabPrimary}

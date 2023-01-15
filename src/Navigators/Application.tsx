@@ -24,6 +24,7 @@ import ConfirmChangePassword from '@/Containers/ConfirmChangePassword'
 import EnterPassword from '@/Containers/EnterPassword'
 import SettingFingerprint from '@/Containers/SettingFingerprint'
 import SettingFaceId from '@/Containers/SettingFaceId'
+import KMAathIntroScreen from '@/Containers/KMAathIntroScreen'
 
 export const Stack = createStackNavigator<RootStackParamList>()
 
@@ -130,6 +131,13 @@ const ApplicationNavigator = () => {
               <Stack.Screen
                 name="SettingFaceId"
                 component={SettingFaceId}
+                options={{
+                  animationEnabled: false,
+                }}
+              />
+              <Stack.Screen
+                name="KMAathIntroScreen"
+                component={KMAathIntroScreen}
                 options={{
                   animationEnabled: false,
                 }}

@@ -69,6 +69,7 @@ export type RootStackParamList = {
   EnterPassword: undefined
   SettingFingerprint: undefined
   SettingFaceId: undefined
+  KMAathIntroScreen: undefined
   DeliveryHomeOffice: {
     product: ProductT
   }
