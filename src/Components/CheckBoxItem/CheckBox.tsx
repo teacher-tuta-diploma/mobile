@@ -15,7 +15,7 @@ const CheckBox = ({ status }: Props) => {
         source={Images.tick}
         w={MetricsSizes.small}
         h={MetricsSizes.small}
-        tintColor={Colors.primary}
+        tintColor={Colors.textSecondary}
         resizeMode="contain"
       />
     </Container>
@@ -23,9 +23,8 @@ const CheckBox = ({ status }: Props) => {
     <Container
       w={MetricsSizes.small}
       h={MetricsSizes.small}
-      bc={Colors.grey}
+      bc={Colors.textSecondary}
       bw={1}
-      br={MetricsSizes.tiny / 2}
     />
   )
 }

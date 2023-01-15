@@ -12,13 +12,14 @@ const TextField = ({
   style,
   inputStyle,
   secureTextEntry,
+  noRight,
   ...other
 }: TextFiledProps) => {
   const { Layout, Common, Colors, MetricsSizes, Images, FontSize } = useTheme()
   const textInputRef = useRef<TextInput>(null)
   const [isShowPassword, setisShowPassword] = useState<boolean>(false)
 
-  if (secureTextEntry) {
+  if (secureTextEntry && !noRight) {
     return (
       <View style={[Common.textInput, Layout.rowHCenter, style]}>
         {renderLeftAccessory?.()}
@@ -47,7 +48,7 @@ const TextField = ({
           <Image
             w={MetricsSizes.small}
             h={MetricsSizes.small}
-            source={!isShowPassword ? Images.close_eye : Images.open_eye}
+            source={!isShowPassword ? Images.eye_open : Images.eye_open}
             resizeMode={'contain'}
             tintColor={Colors.grey}
           />

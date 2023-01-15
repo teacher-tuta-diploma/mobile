@@ -18,4 +18,5 @@ export type TextFiledProps = ContainerProps &
     hasError?: boolean
     required?: boolean
     textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify'
+    noRight?: boolean
   }
