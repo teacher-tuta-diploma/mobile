@@ -7,9 +7,11 @@ import { Touchable } from '../Touchable'
 type Props = {
   text: string
   onPress?: () => void
+  w?: number | string
+  noMargin?: boolean
 }
 
-const ButtonGradient = ({ text, onPress }: Props) => {
+const ButtonGradient = ({ text, onPress, w, noMargin }: Props) => {
   const { MetricsSizes, Fonts, Colors } = useTheme()
   return (
     <LinearGradient
@@ -17,8 +19,8 @@ const ButtonGradient = ({ text, onPress }: Props) => {
         borderRadius: MetricsSizes.tiny,
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 4,
-        borderColor: Colors.backgroundPrimary,
+        marginTop: noMargin ? 0 : MetricsSizes.tiny,
+        marginBottom: noMargin ? 0 : MetricsSizes.small,
       }}
       colors={Colors.backgroundGradientPrimary}
       useAngle
@@ -26,8 +28,8 @@ const ButtonGradient = ({ text, onPress }: Props) => {
     >
       <Touchable
         onPress={onPress}
-        pv={MetricsSizes.tiny * 1.3}
-        w="100%"
+        pv={MetricsSizes.tiny * 1.2}
+        w={w ?? '100%'}
         ai="center"
       >
         <Text style={[Fonts.textRegular]}>{text}</Text>

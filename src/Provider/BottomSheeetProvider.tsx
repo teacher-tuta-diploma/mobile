@@ -10,6 +10,7 @@ import React, { useCallback, useMemo, useRef, useState } from 'react'
 export type BottomSheetT = {
   status?: boolean
   onShowBottomSheet: (c: React.ReactNode) => void
+  onCloseBottomSheet: () => void
 }
 
 export const BottomSheetContext = React.createContext<Partial<BottomSheetT>>({})
@@ -25,11 +26,16 @@ const BottomSheetProvider = ({ children }: { children: React.ReactNode }) => {
     bottomSheetRef?.current?.snapToIndex(0)
   }, [])
 
+  const onCloseBottomSheet = useCallback(() => {
+    bottomSheetRef?.current?.close()
+  }, [])
+
   const contextValue = useMemo<BottomSheetT>(
     () => ({
       onShowBottomSheet,
+      onCloseBottomSheet,
     }),
-    [onShowBottomSheet],
+    [onCloseBottomSheet, onShowBottomSheet],
   )
   return (
     <BottomSheetContext.Provider value={contextValue}>

@@ -69,12 +69,7 @@ const EnterPassword = () => {
           </Container>
         </Container>
       </KeyboardScrollView>
-      <ButtonGradient
-        text="Tiếp theo"
-        onPress={handleSubmit(() => {
-          navigate('SettingFingerprint', {})
-        })}
-      />
+      <ButtonGradient text="Tiếp theo" onPress={handleSubmit(() => {})} />
     </Container>
   )
 }

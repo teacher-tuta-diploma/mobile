@@ -86,5 +86,6 @@ export default function ({}: ThemeVariables) {
     logout1: require('@/Assets/Images/logout1.png'),
     logout2: require('@/Assets/Images/logout2.png'),
     arrow_right_2: require('@/Assets/Images/arrow_right_2.png'),
+    back_2: require('@/Assets/Images/back_2.png'),
   }
 }
