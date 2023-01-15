@@ -2,6 +2,8 @@ import Container from '../Container'
 import { Touchable } from '../Touchable'
 import { useTheme } from '@/Hooks'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import LinearGradient from 'react-native-linear-gradient'
+import Color from 'color'
 
 type Props = {
   value?: boolean
@@ -13,14 +15,11 @@ const Switch = ({ value, onValueChange }: Props) => {
   /**
    * chiều cao của switch
    */
-  const HEIGHT = useMemo(
-    () => MetricsSizes.regular * 0.6,
-    [MetricsSizes.regular],
-  )
+  const HEIGHT = useMemo(() => MetricsSizes.small * 0.8, [MetricsSizes.small])
   /**
    * chiều rộng của switch
    */
-  const WIDTH = useMemo(() => HEIGHT * 2, [HEIGHT])
+  const WIDTH = useMemo(() => HEIGHT * 2.2, [HEIGHT])
   const [valueShow, setValueShow] = useState<boolean>(false)
   const onToggle = useCallback(() => {
     onValueChange?.()
@@ -31,23 +30,41 @@ const Switch = ({ value, onValueChange }: Props) => {
   }, [value])
 
   return (
-    <Touchable
-      br={MetricsSizes.small}
-      bg={valueShow ? Colors.borderGreen2 : Colors.grey10}
-      h={HEIGHT + MetricsSizes.tiny * 0.8}
-      w={WIDTH + MetricsSizes.tiny * 0.8}
-      pv={MetricsSizes.tiny * 0.4}
-      ph={MetricsSizes.tiny * 0.4}
-      onPress={onToggle}
+    <LinearGradient
+      style={{
+        borderRadius: 500,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderColor: Colors.backgroundPrimary,
+      }}
+      colors={
+        valueShow
+          ? Colors.backgroundGradientPrimary
+          : [
+              Color(Colors.textSecondary, 'hex').alpha(1).toString(),
+              Color(Colors.textSecondary, 'hex').alpha(1).toString(),
+            ]
+      }
+      useAngle
+      angle={90}
     >
-      <Container
-        bg={Colors.white}
-        br={100}
-        h={HEIGHT}
-        w={HEIGHT}
-        ml={valueShow ? WIDTH - HEIGHT : 0}
-      />
-    </Touchable>
+      <Touchable
+        br={MetricsSizes.small}
+        h={HEIGHT + MetricsSizes.tiny * 0.6}
+        w={WIDTH + MetricsSizes.tiny * 0.6}
+        pv={MetricsSizes.tiny * 0.3}
+        ph={MetricsSizes.tiny * 0.3}
+        onPress={onToggle}
+      >
+        <Container
+          bg={Colors.white}
+          br={100}
+          h={HEIGHT}
+          w={HEIGHT}
+          ml={valueShow ? WIDTH - HEIGHT : 0}
+        />
+      </Touchable>
+    </LinearGradient>
   )
 }
 

@@ -1,5 +1,4 @@
-import { StyleSheet, Text } from 'react-native'
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import Container from '@/Components/Container'
 import Header from '@/Components/Header'
 import { Controller, useForm } from 'react-hook-form'
@@ -14,12 +13,17 @@ import KeyboardScrollView from '@/Components/KeyboardScrollView'
 import { alertMessage } from '@/Config/alert.helper'
 import { useNavigation } from '@react-navigation/native'
 import useLoadingGlobal from '@/Hooks/useLoadingGlobal'
+import ButtonGradient from '@/Components/ButtonGradient'
+import { Text } from 'react-native'
+import CheckBox from '@/Components/CheckBoxItem/CheckBox'
+import { navigate } from '@/Navigators/utils'
 
 const ChangePassword = () => {
   const { Gutters, Common, Fonts, Images, Colors, MetricsSizes } = useTheme()
-  const navigation = useNavigation()
-  const [handleChangePassword, propsChangePassword] =
-    useHandleChangePasswordMutation()
+  const [showPassword, setShowPassword] = useState(false)
+  // const navigation = useNavigation()
+  // const [handleChangePassword, propsChangePassword] =
+  //   useHandleChangePasswordMutation()
   const {
     control,
     handleSubmit,
@@ -27,86 +31,84 @@ const ChangePassword = () => {
     watch,
   } = useForm({
     defaultValues: {
-      oldPassword: '',
-      newPassword: '',
-      rePassword: '',
+      password: '',
     },
   })
-  console.log(
-    '🛠 LOG: 🚀 --> ------------------------------------------------------------------------------------------------------🛠 LOG: 🚀 -->',
-  )
-  console.log(
-    '🛠 LOG: 🚀 --> ~ file: index.tsx ~ line 19 ~ ChangePassword ~ propsChangePassword',
-    propsChangePassword,
-  )
-  console.log(
-    '🛠 LOG: 🚀 --> ------------------------------------------------------------------------------------------------------🛠 LOG: 🚀 -->',
-  )
+  // console.log(
+  //   '🛠 LOG: 🚀 --> ------------------------------------------------------------------------------------------------------🛠 LOG: 🚀 -->',
+  // )
+  // console.log(
+  //   '🛠 LOG: 🚀 --> ~ file: index.tsx ~ line 19 ~ ChangePassword ~ propsChangePassword',
+  //   propsChangePassword,
+  // )
+  // console.log(
+  //   '🛠 LOG: 🚀 --> ------------------------------------------------------------------------------------------------------🛠 LOG: 🚀 -->',
+  // )
 
-  const loading = useLoadingGlobal()
-  const password = useRef({})
-  password.current = watch('newPassword', '')
-  const oldPassword = useRef({})
-  oldPassword.current = watch('oldPassword', '')
+  // const loading = useLoadingGlobal()
+  // const password = useRef({})
+  // password.current = watch('newPassword', '')
+  // const oldPassword = useRef({})
+  // oldPassword.current = watch('oldPassword', '')
 
-  const onChange = useCallback(
-    (data: any) => {
-      console.log(
-        '🛠 LOG: 🚀 --> ------------------------------------------------------------------🛠 LOG: 🚀 -->',
-      )
-      console.log(
-        '🛠 LOG: 🚀 --> ~ file: index.tsx ~ line 31 ~ onChange ~ data',
-        data,
-      )
-      console.log(
-        '🛠 LOG: 🚀 --> ------------------------------------------------------------------🛠 LOG: 🚀 -->',
-      )
-      handleChangePassword({
-        newPassword: data.newPassword,
-        oldPassword: data.oldPassword,
-      })
-    },
-    [handleChangePassword],
-  )
+  // const onChange = useCallback(
+  //   (data: any) => {
+  //     console.log(
+  //       '🛠 LOG: 🚀 --> ------------------------------------------------------------------🛠 LOG: 🚀 -->',
+  //     )
+  //     console.log(
+  //       '🛠 LOG: 🚀 --> ~ file: index.tsx ~ line 31 ~ onChange ~ data',
+  //       data,
+  //     )
+  //     console.log(
+  //       '🛠 LOG: 🚀 --> ------------------------------------------------------------------🛠 LOG: 🚀 -->',
+  //     )
+  //     handleChangePassword({
+  //       newPassword: data.newPassword,
+  //       oldPassword: data.oldPassword,
+  //     })
+  //   },
+  //   [handleChangePassword],
+  // )
 
-  useEffect(() => {
-    if (
-      propsChangePassword.status === QueryStatus.fulfilled &&
-      propsChangePassword.data?.error?.status === STATUS_API.NOT_FOUND
-    ) {
-      alertMessage('Đổi mật khẩu lỗi')
-    } else if (
-      propsChangePassword.status === QueryStatus.fulfilled &&
-      propsChangePassword.data?.updated
-    ) {
-      alertMessage('Đổi mật khẩu Thành công', '', false, () => {
-        navigation.goBack()
-      })
-    }
-  }, [
-    navigation,
-    propsChangePassword.data?.error?.status,
-    propsChangePassword.data?.updated,
-    propsChangePassword.status,
-  ])
+  // useEffect(() => {
+  //   if (
+  //     propsChangePassword.status === QueryStatus.fulfilled &&
+  //     propsChangePassword.data?.error?.status === STATUS_API.NOT_FOUND
+  //   ) {
+  //     alertMessage('Đổi mật khẩu lỗi')
+  //   } else if (
+  //     propsChangePassword.status === QueryStatus.fulfilled &&
+  //     propsChangePassword.data?.updated
+  //   ) {
+  //     alertMessage('Đổi mật khẩu Thành công', '', false, () => {
+  //       navigation.goBack()
+  //     })
+  //   }
+  // }, [
+  //   navigation,
+  //   propsChangePassword.data?.error?.status,
+  //   propsChangePassword.data?.updated,
+  //   propsChangePassword.status,
+  // ])
 
-  useEffect(() => {
-    return () => {
-      propsChangePassword.reset()
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  // useEffect(() => {
+  //   return () => {
+  //     propsChangePassword.reset()
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
 
-  useEffect(() => {
-    loading.toogleLoading?.(propsChangePassword.isLoading)
-  }, [loading, propsChangePassword.isLoading])
+  // useEffect(() => {
+  //   loading.toogleLoading?.(propsChangePassword.isLoading)
+  // }, [loading, propsChangePassword.isLoading])
 
   return (
-    <Container bg={Colors.white} flex={1}>
-      <Header title="Đổi mật khẩu" />
+    <Container bg={Colors.black} flex={1} ph={MetricsSizes.small}>
+      <Header title="Đổi mật khẩu" textLarge />
       <KeyboardScrollView>
         <Container ph={MetricsSizes.tiny}>
-          <Container>
+          {/* <Container>
             <Container h={MetricsSizes.large} />
             <Text>Mật khẩu cũ</Text>
             <Controller
@@ -251,32 +253,82 @@ const ChangePassword = () => {
                 </Text>
               )}
             </Container>
+          </Container> */}
+          <Container
+            br={MetricsSizes.small}
+            pv={MetricsSizes.tiny}
+            mt={MetricsSizes.small}
+            bw={1}
+            bc={Colors.borderInput2}
+            ai="center"
+          >
+            <Text style={[Fonts.textTiny, { color: Colors.secondary }]}>
+              adsfg@gmail.com
+            </Text>
+          </Container>
+          <Text
+            style={[
+              Fonts.textSmall,
+              Gutters.largeTMargin,
+              { color: Colors.neutral500 },
+            ]}
+          >
+            Để tiếp tục, hãy xác thực danh tính của bạn
+          </Text>
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextField
+                placeholder="Nhập mật khẩu của bạn"
+                placeholderTextColor={Colors.textSecondary}
+                style={[
+                  Gutters.smallTMargin,
+                  { borderColor: Colors.borderInput2 },
+                ]}
+                inputStyle={{ color: Colors.white }}
+                secureTextEntry={!showPassword}
+                noRight
+                value={value}
+                onChangeText={onChange}
+                onBlur={onBlur}
+              />
+            )}
+            name="password"
+          />
+          <Container>
+            {errors.password && errors.password.type === 'required' && (
+              <Text style={[Fonts.textTiny, { color: Colors.error }]}>
+                Vui lòng nhập mật khẩu
+              </Text>
+            )}
+          </Container>
+          <Container flexDr="row" ai="center" mt={MetricsSizes.tiny}>
+            <Touchable onPress={() => setShowPassword(v => !v)}>
+              <CheckBox status={showPassword ? 'CHECKED' : 'UNCHECKED'} />
+            </Touchable>
+            <Text
+              style={[
+                Fonts.textTiny,
+                Gutters.tinyLMargin,
+                { color: Colors.textSecondary },
+              ]}
+            >
+              Hiện mật khẩu
+            </Text>
           </Container>
         </Container>
       </KeyboardScrollView>
-      <Container style={styles.button}>
-        <Touchable
-          onPress={handleSubmit(onChange)}
-          mh={MetricsSizes.tiny}
-          style={[
-            Common.button.rounded,
-            { backgroundColor: Colors.primary, height: MetricsSizes.small * 2 },
-            Gutters.tinyTMargin,
-          ]}
-        >
-          <Text style={[Fonts.textRegular]}>Cập nhật</Text>
-        </Touchable>
-      </Container>
+      <ButtonGradient
+        text="Tiếp theo"
+        onPress={handleSubmit(() => {
+          navigate('ConfirmChangePassword', {})
+        })}
+      />
     </Container>
   )
 }
 
 export default ChangePassword
-
-const styles = StyleSheet.create({
-  button: {
-    position: 'absolute',
-    bottom: 10,
-    width: '100%',
-  },
-})

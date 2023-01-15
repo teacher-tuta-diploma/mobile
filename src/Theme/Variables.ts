@@ -63,6 +63,8 @@ export const Colors = {
   bgNew: 'rgba(33, 33, 33, 0.5)',
   bgInactive: '#ECD5D5',
   neutral500: '#DFDFDF',
+  neutral600: '#BCBDBD',
+  borderInput2: '#505050',
 }
 
 export const NavigationColors = {

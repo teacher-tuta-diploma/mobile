@@ -65,6 +65,10 @@ export type RootStackParamList = {
   FurnituresList: undefined
   BookingCar: undefined
   ChangePassword: undefined
+  ConfirmChangePassword: undefined
+  EnterPassword: undefined
+  SettingFingerprint: undefined
+  SettingFaceId: undefined
   DeliveryHomeOffice: {
     product: ProductT
   }

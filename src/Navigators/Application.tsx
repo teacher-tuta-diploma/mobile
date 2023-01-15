@@ -18,6 +18,11 @@ import ForgotPassword from '@/Containers/ForgotPassword'
 import OtpScreenForgotPassword from '@/Containers/OtpScreenForgotPassword'
 import SetupPassword from '@/Containers/SetupPassword'
 import ProfileDetailScreen from '@/Containers/ProfileDetailScreen'
+import ChangePassword from '@/Containers/ChangePassword'
+import ConfirmChangePassword from '@/Containers/ConfirmChangePassword'
+import EnterPassword from '@/Containers/EnterPassword'
+import SettingFingerprint from '@/Containers/SettingFingerprint'
+import SettingFaceId from '@/Containers/SettingFaceId'
 
 export const Stack = createStackNavigator<RootStackParamList>()
 
@@ -89,6 +94,41 @@ const ApplicationNavigator = () => {
               <Stack.Screen
                 name="ProfileDetailScreen"
                 component={ProfileDetailScreen}
+                options={{
+                  animationEnabled: false,
+                }}
+              />
+              <Stack.Screen
+                name="ChangePassword"
+                component={ChangePassword}
+                options={{
+                  animationEnabled: false,
+                }}
+              />
+              <Stack.Screen
+                name="ConfirmChangePassword"
+                component={ConfirmChangePassword}
+                options={{
+                  animationEnabled: false,
+                }}
+              />
+              <Stack.Screen
+                name="EnterPassword"
+                component={EnterPassword}
+                options={{
+                  animationEnabled: false,
+                }}
+              />
+              <Stack.Screen
+                name="SettingFingerprint"
+                component={SettingFingerprint}
+                options={{
+                  animationEnabled: false,
+                }}
+              />
+              <Stack.Screen
+                name="SettingFaceId"
+                component={SettingFaceId}
                 options={{
                   animationEnabled: false,
                 }}

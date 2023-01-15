@@ -79,5 +79,12 @@ export default function ({}: ThemeVariables) {
     waiting: require('@/Assets/Images/waiting.png'),
     waiting_order: require('@/Assets/Images/waiting_order.png'),
     x_circle: require('@/Assets/Images/x_circle.png'),
+    i_circle: require('@/Assets/Images/i_circle.png'),
+    key: require('@/Assets/Images/key.png'),
+    finger2: require('@/Assets/Images/finger2.png'),
+    key2: require('@/Assets/Images/key2.png'),
+    logout1: require('@/Assets/Images/logout1.png'),
+    logout2: require('@/Assets/Images/logout2.png'),
+    arrow_right_2: require('@/Assets/Images/arrow_right_2.png'),
   }
 }
