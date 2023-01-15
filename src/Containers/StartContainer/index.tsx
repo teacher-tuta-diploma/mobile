@@ -9,7 +9,6 @@ import { setIsStart } from '@/Store/Global'
 import { useAppDispatch } from '@/Hooks/useApp'
 import CircleLoading from '@/Components/CircleLoading'
 import useLoadingGlobal from '@/Hooks/useLoadingGlobal'
-import { setAccessToken } from '@/Store/Authentication'
 const StartContainer = () => {
   const { MetricsSizes, FontSize, Images, Colors } = useTheme()
   const inset = useSafeAreaInsets()
@@ -18,11 +17,6 @@ const StartContainer = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      dispatch(
-        setAccessToken({
-          accessToken: 'data?.accessToken',
-        }),
-      )
       dispatch(
         setIsStart({
           isStart: false,
