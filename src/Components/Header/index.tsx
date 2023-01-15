@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, StatusBar } from 'react-native'
+import { Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Container from '../Container'
 import { useTheme } from '@/Hooks'
@@ -9,44 +9,52 @@ import { useNavigation } from '@react-navigation/native'
 type Props = {
   title: string
   noBack?: boolean
+  textLarge?: boolean
 }
-const Header = ({ title, noBack = false }: Props) => {
-  const { Layout, Gutters, Fonts, Images, Colors, MetricsSizes, FontFamily } =
-    useTheme()
+const Header = ({ title, noBack = false, textLarge }: Props) => {
+  const { Layout, Fonts, Images, Colors, MetricsSizes } = useTheme()
 
   const navigation = useNavigation()
 
   return (
-    <Container bg={Colors.primary}>
-      <StatusBar barStyle={'light-content'} backgroundColor={Colors.primary} />
+    <Container bg={Colors.black} pb={MetricsSizes.tiny} pt={MetricsSizes.small}>
       <SafeAreaView
         edges={['right', 'top', 'left']}
         style={[Layout.rowHCenter]}
       >
         {!noBack && (
-          <TouchableOpacity
-            style={[Gutters.tinyHPadding, Gutters.tinyVPadding]}
-            onPress={navigation.goBack}
-          >
+          <TouchableOpacity onPress={navigation.goBack}>
             <Image
               source={Images.back}
-              w={MetricsSizes.tiny * 1.5}
-              h={MetricsSizes.tiny * 1.5}
-              tintColor={Colors.white}
+              w={MetricsSizes.regular}
+              h={MetricsSizes.small}
+              tintColor={Colors.tabPrimary}
               resizeMode="contain"
             />
           </TouchableOpacity>
         )}
-        <Text
-          style={[
-            Fonts.textRegular,
-            Gutters.tinyVPadding,
-            Gutters.tinyLPadding,
-            { fontFamily: FontFamily.NunitoBold },
-          ]}
-        >
-          {title}
-        </Text>
+        {!noBack ? (
+          <Container ai="center" flex={1}>
+            <Text
+              style={[
+                textLarge ? Fonts.textLargeBold : Fonts.textRegularBold,
+                { color: textLarge ? Colors.white : Colors.neutral500 },
+              ]}
+            >
+              {title}
+            </Text>
+          </Container>
+        ) : (
+          <Text
+            style={[
+              textLarge ? Fonts.textRegularBold : Fonts.textRegularBold,
+              { color: textLarge ? Colors.white : Colors.neutral500 },
+            ]}
+          >
+            {title}
+          </Text>
+        )}
+        {!noBack && <Container w={MetricsSizes.regular} />}
       </SafeAreaView>
     </Container>
   )

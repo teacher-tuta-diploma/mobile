@@ -140,6 +140,8 @@ export type RootStackParamList = {
   AdvertisementScreen: {
     advertisements: AdvertisementsT
   }
+  ProfileScreen: undefined
+  ProfileDetailScreen: { name: string }
   Qrcode: undefined
   QrcodeScan: undefined
   Activity: undefined

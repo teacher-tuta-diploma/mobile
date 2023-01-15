@@ -10,6 +10,7 @@ import ProfileUserStack from './ProfileUser'
 import { RootStackParamList } from '@/Navigators/utils'
 import Notification from '@/Containers/Notification'
 import QrScanContainer from '@/Containers/QrScanContainer'
+import ProfileScreen from '@/Containers/ProfileScreen'
 
 const Tab = createBottomTabNavigator<RootStackParamList>()
 
@@ -37,7 +38,7 @@ const MainNavigator = () => {
       <Tab.Screen
         options={headerOption}
         name="Identifier"
-        component={Notification}
+        component={ProfileScreen}
       />
       <Tab.Screen
         options={headerOption}
