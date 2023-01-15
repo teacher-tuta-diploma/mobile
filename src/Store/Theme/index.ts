@@ -3,7 +3,7 @@ import themes from '@/Theme/themes'
 
 const slice = createSlice({
   name: 'theme',
-  initialState: { theme: 'thanhhung_light', darkMode: null } as ThemeState,
+  initialState: { theme: 'default', darkMode: null } as ThemeState,
   reducers: {
     changeTheme: (state, { payload: { theme, darkMode } }: ThemePayload) => {
       if (typeof theme !== 'undefined') {
